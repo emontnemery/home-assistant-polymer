@@ -60,6 +60,16 @@ class HaEntityPicker extends LitElement {
     return sorted;*/
   });
 
+  //{localize(
+  //                `ui.panel.config.automation.editor.triggers.type.${opt}.label`
+  //              )}
+  //<div main-title>
+  //            ${this.automation
+  //              ? computeStateName(this.automation)
+  //              : this.hass.localize(
+  //                  "ui.panel.config.automation.editor.default_name"
+  //                )}
+  //          </div>
   protected render(): TemplateResult | void {
     return html`
       <paper-dropdown-menu-light .label=${this.label}>
@@ -69,16 +79,12 @@ class HaEntityPicker extends LitElement {
           attr-for-selected="data-trigger"
           @iron-select=${this._triggerChanged}
         >
-          <paper-icon-item data-trigger="">
+          <paper-icon-item data-trigger="{}">
             No trigger
           </paper-icon-item>
           ${this._sortedTriggers(this.triggers).map(
             (trigger) => html`
               <paper-icon-item data-trigger=${JSON.stringify(trigger)}>
-                <ha-user-badge
-                  .user=${trigger}
-                  slot="item-icon"
-                ></ha-user-badge>
                 ${trigger.entity_id} ${trigger.type} ${trigger.name}
               </paper-icon-item>
             `
@@ -131,10 +137,12 @@ class HaEntityPicker extends LitElement {
     console.log("_triggerChanged");
     console.log(ev);
     console.log(ev.detail.item.dataset.trigger);
-    const newValue = JSON.parse(ev.detail.item.dataset.trigger);
+    //const newValue = JSON.parse(ev.detail.item.dataset.trigger);
+    const newValue = ev.detail.item.dataset.trigger;
 
     if (newValue !== this._value) {
-      //this.value = newValue;
+      //this.value = "abc123";
+      this.value = newValue;
       setTimeout(() => {
         fireEvent(this, "value-changed", { value: newValue });
         fireEvent(this, "change");

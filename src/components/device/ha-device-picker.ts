@@ -52,7 +52,6 @@ class HaEntityPicker extends LitElement {
           ${this._sortedDevices(this.devices).map(
             (device) => html`
               <paper-icon-item data-device-id=${device.id}>
-                <ha-user-badge .user=${device} slot="item-icon"></ha-user-badge>
                 ${device.name}
               </paper-icon-item>
             `

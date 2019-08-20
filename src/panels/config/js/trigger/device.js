@@ -3,6 +3,7 @@ import { h, Component } from "preact";
 import "@polymer/paper-input/paper-input";
 import "../../../../components/device/ha-device-picker";
 import "../../../../components/device/ha-device-trigger-picker";
+import "../../../../components/device/ha-device-trigger-picker2";
 
 import { onChangeEvent } from "../../../../common/preact/event";
 
@@ -24,16 +25,19 @@ export default class DeviceTrigger extends Component {
       this.props.index,
       Object.assign({}, this.props.trigger, {
         device_id: ev.target.value,
-        foo: "bar",
+        //foo: "bar",
       })
     );
   }
 
   deviceTriggerPicked(ev) {
     console.log(ev);
+    console.log(ev.target.value);
+    console.log(ev.target.dataset);
+    let deviceTrigger = JSON.parse(ev.target.value);
     this.props.onChange(
       this.props.index,
-      Object.assign({}, this.props.trigger, { trigger: ev.target.value })
+      Object.assign({}, this.props.trigger, deviceTrigger)
     );
   }
 
@@ -63,7 +67,6 @@ export default class DeviceTrigger extends Component {
           allowCustomEntity
         />
         <ha-device-trigger-picker
-          value={device_id}
           deviceId={this.deviceId}
           onChange={this.deviceTriggerPicked}
           onValueChanged={this.deviceTriggerPicked}
