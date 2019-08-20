@@ -15,20 +15,24 @@ import {
 } from "lit-element";
 import { HomeAssistant } from "../../types";
 import { fireEvent } from "../../common/dom/fire_event";
-import { User, fetchUsers } from "../../data/user";
+import {
+  DeviceRegistryEntry,
+  fetchDeviceRegistry,
+} from "../../data/device_registry";
 import { compare } from "../../common/string/compare";
 
 class HaEntityPicker extends LitElement {
   public hass?: HomeAssistant;
   @property() public label?: string;
   @property() public value?: string;
-  @property() public users?: User[];
+  @property() public devices?: DeviceRegistryEntry[];
 
-  private _sortedUsers = memoizeOne((users?: User[]) => {
-    if (!users || users.length === 1) {
-      return users || [];
+  private _sortedDevices = memoizeOne((devices?: DeviceRegistryEntry[]) => {
+    console.log(devices);
+    if (!devices || devices.length === 1) {
+      return devices || [];
     }
-    const sorted = [...users];
+    const sorted = [...devices];
     sorted.sort((a, b) => compare(a.name, b.name));
     return sorted;
   });
@@ -39,17 +43,17 @@ class HaEntityPicker extends LitElement {
         <paper-listbox
           slot="dropdown-content"
           .selected=${this._value}
-          attr-for-selected="data-user-id"
-          @iron-select=${this._userChanged}
+          attr-for-selected="data-device-id"
+          @iron-select=${this._deviceChanged}
         >
-          <paper-icon-item data-user-id="">
-            No user
+          <paper-icon-item data-device-id="">
+            No device
           </paper-icon-item>
-          ${this._sortedUsers(this.users).map(
-            (user) => html`
-              <paper-icon-item data-user-id=${user.id}>
-                <ha-user-badge .user=${user} slot="item-icon"></ha-user-badge>
-                ${user.name}
+          ${this._sortedDevices(this.devices).map(
+            (device) => html`
+              <paper-icon-item data-device-id=${device.id}>
+                <ha-user-badge .user=${device} slot="item-icon"></ha-user-badge>
+                ${device.name}
               </paper-icon-item>
             `
           )}
@@ -64,21 +68,19 @@ class HaEntityPicker extends LitElement {
 
   protected firstUpdated(changedProps) {
     super.firstUpdated(changedProps);
-    if (this.users === undefined) {
-      fetchUsers(this.hass!).then((users) => {
-        this.users = users;
+    if (this.devices === undefined) {
+      // TODO: Subscribe to device registry updates?
+      fetchDeviceRegistry(this.hass.connection!).then((devices) => {
+        this.devices = devices;
       });
     }
   }
 
-  private _userChanged(ev) {
-    console.log("_userChanged");
-    console.log(ev);
-    const newValue = ev.detail.item.dataset.userId;
+  private _deviceChanged(ev) {
+    const newValue = ev.detail.item.dataset.deviceId;
 
     if (newValue !== this._value) {
-      console.log(ev.detail.value);
-      this.value = ev.detail.value;
+      this.value = newValue;
       setTimeout(() => {
         fireEvent(this, "value-changed", { value: newValue });
         fireEvent(this, "change");
@@ -104,4 +106,4 @@ class HaEntityPicker extends LitElement {
   }
 }
 
-customElements.define("ha-user-picker", HaEntityPicker);
+customElements.define("ha-device-picker", HaEntityPicker);

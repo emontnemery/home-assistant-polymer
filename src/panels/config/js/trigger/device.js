@@ -1,28 +1,45 @@
 import { h, Component } from "preact";
 
 import "@polymer/paper-input/paper-input";
-import "../../../../components/user/ha-user-picker";
+import "../../../../components/device/ha-device-picker";
+import "../../../../components/device/ha-device-trigger-picker";
 
 import { onChangeEvent } from "../../../../common/preact/event";
 
-export default class StateTrigger extends Component {
+export default class DeviceTrigger extends Component {
   constructor() {
     super();
-
+    this.deviceId = "a64b668813a6445c838ef924d32dda5d";
     this.onChange = onChangeEvent.bind(this, "trigger");
-    this.entityPicked = this.entityPicked.bind(this);
+    this.devicePicked = this.devicePicked.bind(this);
+    this.deviceTriggerPicked = this.deviceTriggerPicked.bind(this);
   }
 
-  entityPicked(ev) {
+  devicePicked(ev) {
+    console.log(ev);
+    console.log(ev.target.value);
+    console.log(this.props);
+    this.deviceId = ev.target.value;
     this.props.onChange(
       this.props.index,
-      Object.assign({}, this.props.trigger, { entity_id: ev.target.value })
+      Object.assign({}, this.props.trigger, {
+        device_id: ev.target.value,
+        foo: "bar",
+      })
+    );
+  }
+
+  deviceTriggerPicked(ev) {
+    console.log(ev);
+    this.props.onChange(
+      this.props.index,
+      Object.assign({}, this.props.trigger, { trigger: ev.target.value })
     );
   }
 
   /* eslint-disable camelcase */
   render({ trigger, hass, localize }) {
-    const { entity_id, to } = trigger;
+    const { device_id, to } = trigger;
     const trgFrom = trigger.from;
     let trgFor = trigger.for;
 
@@ -38,10 +55,21 @@ export default class StateTrigger extends Component {
     }
     return (
       <div>
-        <ha-user-picker
-          value={entity_id}
-          onChange={this.entityPicked}
+        <ha-device-picker
+          value={device_id}
+          onChange={this.devicePicked}
           hass={hass}
+          label="Device"
+          allowCustomEntity
+        />
+        <ha-device-trigger-picker
+          value={device_id}
+          deviceId={this.deviceId}
+          onChange={this.deviceTriggerPicked}
+          onValueChanged={this.deviceTriggerPicked}
+          on-value-changed={this.deviceTriggerPicked}
+          hass={hass}
+          label="Trigger"
           allowCustomEntity
         />
         <paper-input
@@ -73,6 +101,6 @@ export default class StateTrigger extends Component {
   }
 }
 
-StateTrigger.defaultConfig = {
-  entity_id: "",
+DeviceTrigger.defaultConfig = {
+  device_id: "",
 };
