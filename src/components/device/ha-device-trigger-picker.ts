@@ -84,6 +84,12 @@ class HaDeviceTriggerPicker extends LitElement {
 
   protected async firstUpdated(changedProps) {
     this.setTrigger = this.presetTrigger;
+    if (
+      this.setTrigger.device_id === "54a70cc216ce412c99c40b2a52e5ff0b" &&
+      this.setTrigger.type === "turn_on"
+    ) {
+      //this.setTrigger.type = "turn_onn";
+    }
   }
 
   protected async updated(changedProps) {

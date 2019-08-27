@@ -24,8 +24,10 @@ export default class DeviceTrigger extends Component {
   }
 
   /* eslint-disable camelcase */
-  render({ trigger, hass }, { device_id }) {
+  render({ trigger, hass, localize }, { device_id }) {
     if (device_id === undefined) device_id = trigger.device_id;
+    //const showFor = trigger.domain === "light";
+    const showFor = false;
 
     return (
       <div>
@@ -41,6 +43,15 @@ export default class DeviceTrigger extends Component {
           onChange={this.deviceTriggerPicked}
           hass={hass}
           label="Trigger"
+        />
+        <paper-input
+          label={localize(
+            "ui.panel.config.automation.editor.triggers.type.state.for"
+          )}
+          name="for"
+          //value={trigger.domain}
+          onvalue-changed={this.onChange}
+          hidden={!showFor}
         />
       </div>
     );
