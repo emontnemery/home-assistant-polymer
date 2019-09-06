@@ -2,6 +2,7 @@ import { h, Component } from "preact";
 
 import "../../../../components/device/ha-device-picker";
 import "../../../../components/device/ha-device-trigger-picker";
+import "../../../../components/paper-time-input";
 
 import { onChangeEvent } from "../../../../common/preact/event";
 
@@ -25,7 +26,21 @@ export default class DeviceTrigger extends Component {
 
   /* eslint-disable camelcase */
   render({ trigger, hass }, { device_id }) {
+    console.log(trigger);
     if (device_id === undefined) device_id = trigger.device_id;
+    const showFor = trigger.domain === "light";
+    let trgFor = trigger.for;
+
+    if (trgFor && (trgFor.hours || trgFor.minutes || trgFor.seconds)) {
+      // If the trigger was defined using the yaml dict syntax, convert it to
+      // the equivalent string format
+      let { hours = 0, minutes = 0, seconds = 0 } = trgFor;
+      hours = hours.toString();
+      minutes = minutes.toString().padStart(2, "0");
+      seconds = seconds.toString().padStart(2, "0");
+
+      trgFor = `${hours}:${minutes}:${seconds}`;
+    }
 
     return (
       <div>
@@ -41,6 +56,17 @@ export default class DeviceTrigger extends Component {
           onChange={this.deviceTriggerPicked}
           hass={hass}
           label="Trigger"
+        />
+        <paper-time-input
+          label={hass.localize(
+            "ui.panel.config.automation.editor.triggers.type.state.for"
+          )}
+          name="for"
+          format={24}
+          //value={trigger.domain}
+          value={trgFor}
+          onvalue-changed={this.onChange}
+          hidden={!showFor}
         />
       </div>
     );

@@ -22,6 +22,7 @@ export default class StateTrigger extends Component {
 
   /* eslint-disable camelcase */
   render({ trigger, hass, localize }) {
+    console.log(trigger);
     const { entity_id, to } = trigger;
     const trgFrom = trigger.from;
     let trgFor = trigger.for;
