@@ -21,7 +21,12 @@ export default class DeviceTrigger extends Component {
 
   deviceTriggerPicked(ev) {
     const deviceTrigger = ev.target.value;
-    this.props.onChange(this.props.index, (this.props.trigger = deviceTrigger));
+    console.log("deviceTriggerPicked: ", deviceTrigger);
+    const trgFor = this.props.trigger.for;
+    this.props.onChange(
+      this.props.index,
+      Object.assign({}, (this.props.trigger = deviceTrigger), { for: trgFor })
+    );
   }
 
   /* eslint-disable camelcase */
@@ -39,8 +44,9 @@ export default class DeviceTrigger extends Component {
       minutes = minutes.toString().padStart(2, "0");
       seconds = seconds.toString().padStart(2, "0");
 
-      trgFor = `${hours}:${minutes}:${seconds}`;
+      //trgFor = `${hours}:${minutes}:${seconds}`;
     }
+    console.log(trgFor);
 
     return (
       <div>
@@ -64,7 +70,7 @@ export default class DeviceTrigger extends Component {
           name="for"
           format={24}
           //value={trigger.domain}
-          value={trgFor}
+          value={{ trgFor }}
           onvalue-changed={this.onChange}
           hidden={!showFor}
         />
