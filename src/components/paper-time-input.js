@@ -49,6 +49,7 @@ export class PaperTimeInput extends PolymerElement {
             display: none;
           }
           --paper-input-container-shared-input-style_-_-webkit-appearance: textfield;
+          --paper-input-container-invalid-color: red;
         }
 
         paper-dropdown-menu {
@@ -249,11 +250,11 @@ export class PaperTimeInput extends PolymerElement {
    * Create time string
    */
   _computeTime(min, hour, amPm) {
+    // No ampm on 24 hr time
+    if (this.format === 24 && hour && min) {
+      return hour + ":" + min;
+    }
     if (hour && min) {
-      // No ampm on 24 hr time
-      if (this.format === 24) {
-        amPm = "";
-      }
       return hour + ":" + min + " " + amPm;
     }
     return undefined;
@@ -263,6 +264,11 @@ export class PaperTimeInput extends PolymerElement {
    * Format min
    */
   _formatMin() {
+    // Replace with non greedy search for 0 followed by digit
+    this.min = this.min.toString().replace(/^0+/, "");
+    if (this.min.toString().length === 0) {
+      this.min = 0;
+    }
     if (this.min.toString().length === 1) {
       this.min = this.min < 10 ? "0" + this.min : this.min;
     }
@@ -272,6 +278,11 @@ export class PaperTimeInput extends PolymerElement {
    * Hour needs a leading zero in 24hr format
    */
   _shouldFormatHour() {
+    // Replace with non greedy search for 0 followed by digit
+    this.hour = this.hour.toString().replace(/^0+/, "");
+    if (this.hour.toString().length === 0) {
+      this.hour = 0;
+    }
     if (this.format === 24 && this.hour.toString().length === 1) {
       this.hour = this.hour < 10 ? "0" + this.hour : this.hour;
     }
