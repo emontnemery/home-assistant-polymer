@@ -4316,12 +4316,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/qrcode@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@types/qrcode@npm:1.5.0"
+"@types/qrcode@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "@types/qrcode@npm:1.5.1"
   dependencies:
     "@types/node": "*"
-  checksum: b0ece3834ca5ba6171132928fd1ef764772dc619b45cb4123461ee05e377ad15553a330d234c69db0d0028c6639a99429e88d99192fbba9c5ee97c23f278c48b
+  checksum: 0f780f31d983fa8d1bfbba1a130e8f7b07866d556807eccfb1d08d841c70644cdee8fc169ca752bdf17e99995e6155fcb6179079338ac8359294c781b95112b5
   languageName: node
   linkType: hard
 
@@ -9675,7 +9675,7 @@ fsevents@^1.2.7:
     "@types/leaflet-draw": ^1
     "@types/marked": ^4
     "@types/mocha": ^8
-    "@types/qrcode": ^1.5.0
+    "@types/qrcode": ^1.5.1
     "@types/sortablejs": ^1
     "@types/tar": ^6
     "@types/webspeechapi": ^0.0.29
@@ -9755,7 +9755,7 @@ fsevents@^1.2.7:
     proxy-polyfill: ^0.3.2
     punycode: ^2.3.0
     qr-scanner: ^1.4.2
-    qrcode: ^1.5.1
+    qrcode: ^1.5.3
     regenerator-runtime: ^0.13.11
     require-dir: ^1.2.0
     resize-observer-polyfill: ^1.5.1
@@ -13443,9 +13443,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"qrcode@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "qrcode@npm:1.5.1"
+"qrcode@npm:^1.5.3":
+  version: 1.5.3
+  resolution: "qrcode@npm:1.5.3"
   dependencies:
     dijkstrajs: ^1.0.1
     encode-utf8: ^1.0.3
@@ -13453,7 +13453,7 @@ fsevents@^1.2.7:
     yargs: ^15.3.1
   bin:
     qrcode: bin/qrcode
-  checksum: 842f899d95caaad2ac507408b5498be3197e1df16bc6b537b20069d2cb1330e4588b50f672ce4a9ccf01338f7c97b5732ff9b5caaa6eb2338187d3c25a973e79
+  checksum: 9a8a20a0a9cb1d15de8e7b3ffa214e8b6d2a8b07655f25bd1b1d77f4681488f84d7bae569870c0652872d829d5f8ac4922c27a6bd14c13f0e197bf07b28dead7
   languageName: node
   linkType: hard
 
