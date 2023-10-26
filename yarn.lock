@@ -3450,7 +3450,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/iron-icon@npm:^3.0.0, @polymer/iron-icon@npm:^3.0.0-pre.26, @polymer/iron-icon@npm:^3.0.1":
+"@polymer/iron-icon@npm:^3.0.0-pre.26, @polymer/iron-icon@npm:^3.0.1":
   version: 3.0.1
   resolution: "@polymer/iron-icon@npm:3.0.1"
   dependencies:
@@ -3461,7 +3461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/iron-iconset-svg@npm:^3.0.0, @polymer/iron-iconset-svg@npm:^3.0.0-pre.26":
+"@polymer/iron-iconset-svg@npm:^3.0.0-pre.26":
   version: 3.0.1
   resolution: "@polymer/iron-iconset-svg@npm:3.0.1"
   dependencies:
@@ -4621,110 +4621,126 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vaadin/combo-box@npm:^23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/combo-box@npm:23.3.6"
+"@vaadin/a11y-base@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/a11y-base@npm:24.2.1"
   dependencies:
     "@open-wc/dedupe-mixin": ^1.3.0
     "@polymer/polymer": ^3.0.0
-    "@vaadin/component-base": ~23.3.6
-    "@vaadin/field-base": ~23.3.6
-    "@vaadin/input-container": ~23.3.6
-    "@vaadin/item": ~23.3.6
-    "@vaadin/lit-renderer": ~23.3.6
-    "@vaadin/overlay": ~23.3.6
-    "@vaadin/vaadin-lumo-styles": ~23.3.6
-    "@vaadin/vaadin-material-styles": ~23.3.6
-    "@vaadin/vaadin-themable-mixin": ~23.3.6
-  checksum: fdd260a4adf89850fb058bc99a008e970ec7b58a2c576101548640a08577d497dc87778e2b3901f93249e2b21ac2e39d1d5c011762cff98c59fcf7cdc31200c0
+    "@vaadin/component-base": ~24.2.1
+    lit: ^2.0.0
+  checksum: f9e70a57f17daa61ccb65fab52faf645683b11df518ccc80f8034e24053a4d039e4f2e9a70f7e7f8768f1d0fab181fd83056f2d30b260d0bc5dd69831619072f
   languageName: node
   linkType: hard
 
-"@vaadin/component-base@npm:~23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/component-base@npm:23.3.6"
+"@vaadin/combo-box@npm:^24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/combo-box@npm:24.2.1"
+  dependencies:
+    "@open-wc/dedupe-mixin": ^1.3.0
+    "@polymer/polymer": ^3.0.0
+    "@vaadin/a11y-base": ~24.2.1
+    "@vaadin/component-base": ~24.2.1
+    "@vaadin/field-base": ~24.2.1
+    "@vaadin/input-container": ~24.2.1
+    "@vaadin/item": ~24.2.1
+    "@vaadin/lit-renderer": ~24.2.1
+    "@vaadin/overlay": ~24.2.1
+    "@vaadin/vaadin-lumo-styles": ~24.2.1
+    "@vaadin/vaadin-material-styles": ~24.2.1
+    "@vaadin/vaadin-themable-mixin": ~24.2.1
+  checksum: e8d43fa29553761dcf2d6b1353f2599d112d859f1c85d2a3ad5f8413312e85ab68c200a4bedb49afb5bee08c333b79dbe88c09f8644de815623c1c1f13a50740
+  languageName: node
+  linkType: hard
+
+"@vaadin/component-base@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/component-base@npm:24.2.1"
   dependencies:
     "@open-wc/dedupe-mixin": ^1.3.0
     "@polymer/polymer": ^3.0.0
     "@vaadin/vaadin-development-mode-detector": ^2.0.0
     "@vaadin/vaadin-usage-statistics": ^2.1.0
     lit: ^2.0.0
-  checksum: d3301f12cbc2c7bc900aef87ccbc3513b58a7a23b846a8dea40a2b91dd82d37f02bc080523f4d9e4413c23a7f2b56fe9f709d9ed72d2d1a214c7205e7d429a6d
+  checksum: c717ab81171958c57f831a5b25bf04fbb908b145fd4311da248db2ce3ba42ca0144f140c31d78e5011d6777047a1d8aa1337a5bd719f63b0b1d3d03dbbe2dacf
   languageName: node
   linkType: hard
 
-"@vaadin/field-base@npm:~23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/field-base@npm:23.3.6"
+"@vaadin/field-base@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/field-base@npm:24.2.1"
   dependencies:
     "@open-wc/dedupe-mixin": ^1.3.0
     "@polymer/polymer": ^3.0.0
-    "@vaadin/component-base": ~23.3.6
+    "@vaadin/a11y-base": ~24.2.1
+    "@vaadin/component-base": ~24.2.1
     lit: ^2.0.0
-  checksum: cd37f85f2a52a2c0a46bbae959caa28bf2c64394ccdfec911eb9dd07b2cdac733def169738958b8dc421e82752c9fa6e201926d5a967113a8a48ccecdb61a887
+  checksum: fce85d1baca208dca7b5d939764c85489992fdc02068ec7aeb0ef9c7dc63ddb3b93d308239c9b94167d27f166fb471cac2441935d245f0d78ab9c8450b729fdb
   languageName: node
   linkType: hard
 
-"@vaadin/icon@npm:~23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/icon@npm:23.3.6"
+"@vaadin/icon@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/icon@npm:24.2.1"
   dependencies:
     "@polymer/polymer": ^3.0.0
-    "@vaadin/component-base": ~23.3.6
-    "@vaadin/vaadin-lumo-styles": ~23.3.6
-    "@vaadin/vaadin-themable-mixin": ~23.3.6
+    "@vaadin/component-base": ~24.2.1
+    "@vaadin/vaadin-lumo-styles": ~24.2.1
+    "@vaadin/vaadin-themable-mixin": ~24.2.1
     lit: ^2.0.0
-  checksum: 5c559274e44bcab9aa4683f77a8078ff1f4b7af71f446091f321f1f47c954f918ee306341dd0415c743d78cde40601e3e381b215672d4cb91f92fe37debf44fa
+  checksum: f63c5ebc14cc7e9594fac3dcb3469328ac81d004ca03665ded32b5a542ae9c9950ed75d9038a1c89348fcefa26d0350311e2bf6877de2c77f83fa17a87c4f6fe
   languageName: node
   linkType: hard
 
-"@vaadin/input-container@npm:~23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/input-container@npm:23.3.6"
+"@vaadin/input-container@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/input-container@npm:24.2.1"
   dependencies:
     "@polymer/polymer": ^3.0.0
-    "@vaadin/component-base": ~23.3.6
-    "@vaadin/vaadin-lumo-styles": ~23.3.6
-    "@vaadin/vaadin-material-styles": ~23.3.6
-    "@vaadin/vaadin-themable-mixin": ~23.3.6
-  checksum: c675f1daf9f51f1fc0987a85be1ed83bffc897be9a694b861a037a9c91438a1f02f232cd026c80ec88ffc409ae147ed415cadd8ed07b34e49b94b15e01753d0e
+    "@vaadin/component-base": ~24.2.1
+    "@vaadin/vaadin-lumo-styles": ~24.2.1
+    "@vaadin/vaadin-material-styles": ~24.2.1
+    "@vaadin/vaadin-themable-mixin": ~24.2.1
+  checksum: 18877e00b75acf6006809c557cb7e694b57bdb09763920a6dea604beb0e3a601f781079f664ac81dc2100670de201a6521bbb1d7e722fc603289f7311d2f0fb7
   languageName: node
   linkType: hard
 
-"@vaadin/item@npm:~23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/item@npm:23.3.6"
+"@vaadin/item@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/item@npm:24.2.1"
   dependencies:
     "@open-wc/dedupe-mixin": ^1.3.0
     "@polymer/polymer": ^3.0.0
-    "@vaadin/component-base": ~23.3.6
-    "@vaadin/vaadin-lumo-styles": ~23.3.6
-    "@vaadin/vaadin-material-styles": ~23.3.6
-    "@vaadin/vaadin-themable-mixin": ~23.3.6
-  checksum: 92236d255173a22cbbae9b83e521f2037228961bd675eead48c312f0a4311cdd488289418e1c9015559993c8a673f62c09dbdefc4b50bcaaa4b42b357c124073
+    "@vaadin/a11y-base": ~24.2.1
+    "@vaadin/component-base": ~24.2.1
+    "@vaadin/vaadin-lumo-styles": ~24.2.1
+    "@vaadin/vaadin-material-styles": ~24.2.1
+    "@vaadin/vaadin-themable-mixin": ~24.2.1
+  checksum: f9d435971e39f42f24bf7384718828e5e0eeb32a19fbd70de5945e36a1222c1fbb7e025bb0f2513e1dc244510c12986f4e9478302c91de1ad04accf71956f010
   languageName: node
   linkType: hard
 
-"@vaadin/lit-renderer@npm:~23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/lit-renderer@npm:23.3.6"
+"@vaadin/lit-renderer@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/lit-renderer@npm:24.2.1"
   dependencies:
     lit: ^2.0.0
-  checksum: fcd411682943e7a8160c501a0063a1d6de51687d2b08864590c83111ae8ebcf50b471443f62a855bab6debce1520de320b6620ab4bc4a324fcc9c3eeab2bd769
+  checksum: 230627e64af657fbad8c6c2d987b54eda2856a2bf0f25dce30202346ea107786c34c0ac8436049abbaf201635d33332afd0c547e43ed42581b3d577f8148750a
   languageName: node
   linkType: hard
 
-"@vaadin/overlay@npm:~23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/overlay@npm:23.3.6"
+"@vaadin/overlay@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/overlay@npm:24.2.1"
   dependencies:
     "@open-wc/dedupe-mixin": ^1.3.0
     "@polymer/polymer": ^3.0.0
-    "@vaadin/component-base": ~23.3.6
-    "@vaadin/vaadin-lumo-styles": ~23.3.6
-    "@vaadin/vaadin-material-styles": ~23.3.6
-    "@vaadin/vaadin-themable-mixin": ~23.3.6
-  checksum: 9ff90980602bda7a10efe735eff973844e6b30112735389f9be60dee04fd51ab8752345c8a173d1ab6cc5583c26a67cfb4faa301db1b8c2c1a48c6164f4ce3bb
+    "@vaadin/a11y-base": ~24.2.1
+    "@vaadin/component-base": ~24.2.1
+    "@vaadin/vaadin-lumo-styles": ~24.2.1
+    "@vaadin/vaadin-material-styles": ~24.2.1
+    "@vaadin/vaadin-themable-mixin": ~24.2.1
+  checksum: 139e81e4190e4431cb73b93a2a878f3658481540ad6ab22490f7b4974aaf2cb5ac88296b11ff0f23d986ccebf8f5ad0987d31bbb12983bba92919393bc96195b
   languageName: node
   linkType: hard
 
@@ -4735,36 +4751,46 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vaadin/vaadin-lumo-styles@npm:~23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/vaadin-lumo-styles@npm:23.3.6"
+"@vaadin/vaadin-lumo-styles@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/vaadin-lumo-styles@npm:24.2.1"
   dependencies:
-    "@polymer/iron-icon": ^3.0.0
-    "@polymer/iron-iconset-svg": ^3.0.0
     "@polymer/polymer": ^3.0.0
-    "@vaadin/icon": ~23.3.6
-    "@vaadin/vaadin-themable-mixin": ~23.3.6
-  checksum: d3e4d47c0a0e8f786cba38f185a80a08274f1e93020896a1d1a67eff7518c9774c77b15622968128c823c08e7c789f08918aeb8c78f18c60b18078f63f67f7ff
+    "@vaadin/component-base": ~24.2.1
+    "@vaadin/icon": ~24.2.1
+    "@vaadin/vaadin-themable-mixin": ~24.2.1
+  checksum: eb2bd0cbb63798fb089cc517d873c70c36bef434fa7a91c3a8bb420679de79badf68ea9a2fd2127eca118029b445c432659a79b9ee2edb307650e45aadd2c54e
   languageName: node
   linkType: hard
 
-"@vaadin/vaadin-material-styles@npm:~23.3.6":
-  version: 23.3.6
-  resolution: "@vaadin/vaadin-material-styles@npm:23.3.6"
+"@vaadin/vaadin-material-styles@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/vaadin-material-styles@npm:24.2.1"
   dependencies:
     "@polymer/polymer": ^3.0.0
-    "@vaadin/vaadin-themable-mixin": ~23.3.6
-  checksum: 7725bb7952b75724ac33de8abcca164689c545dad8675155ff72ef9dd2ae6eb082fdcad483e851a4ef6090c2f40834c6e401a304ab38af700eac0442189fa06b
+    "@vaadin/component-base": ~24.2.1
+    "@vaadin/vaadin-themable-mixin": ~24.2.1
+  checksum: 06ba93b1726655d52a742928fae91b30f3d2114f350f43043b46c227131393734fff4ab2a86dc2516b636fcbddd3f973bd8db350fbc136e0e8a24a154b87aaac
   languageName: node
   linkType: hard
 
-"@vaadin/vaadin-themable-mixin@npm:^23.3.6, @vaadin/vaadin-themable-mixin@npm:~23.3.6":
+"@vaadin/vaadin-themable-mixin@npm:^23.3.6":
   version: 23.3.6
   resolution: "@vaadin/vaadin-themable-mixin@npm:23.3.6"
   dependencies:
     "@open-wc/dedupe-mixin": ^1.3.0
     lit: ^2.0.0
   checksum: 5cdf75ad20e30d15daaa5f1428613a8c78c0159c61e1607ff3c3a3d374b8c8ae9a7a5c99a718d845228305518863e8ff3a4c86897f3dd350c507a3f317f42637
+  languageName: node
+  linkType: hard
+
+"@vaadin/vaadin-themable-mixin@npm:~24.2.1":
+  version: 24.2.1
+  resolution: "@vaadin/vaadin-themable-mixin@npm:24.2.1"
+  dependencies:
+    "@open-wc/dedupe-mixin": ^1.3.0
+    lit: ^2.0.0
+  checksum: 1da248d4c21b8eb0df918cceee3ba264a883a51864d434d78aaef8f79d1f54dadfb7d98becdf8174b1dc43c702023706e3aaccd04c3b3d85e33bb47d1fc0778f
   languageName: node
   linkType: hard
 
@@ -9681,7 +9707,7 @@ fsevents@^1.2.7:
     "@types/webspeechapi": ^0.0.29
     "@typescript-eslint/eslint-plugin": ^5.51.0
     "@typescript-eslint/parser": ^5.49.0
-    "@vaadin/combo-box": ^23.3.6
+    "@vaadin/combo-box": ^24.2.1
     "@vaadin/vaadin-themable-mixin": ^23.3.6
     "@vibrant/color": ^3.2.1-alpha.1
     "@vibrant/core": ^3.2.1-alpha.1
