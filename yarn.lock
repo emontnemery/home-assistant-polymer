@@ -9796,7 +9796,7 @@ fsevents@^1.2.7:
     workbox-core: ^6.5.4
     workbox-expiration: ^6.5.4
     workbox-precaching: ^6.5.4
-    workbox-routing: ^6.5.4
+    workbox-routing: ^7.0.0
     workbox-strategies: ^6.5.4
     xss: ^1.0.14
   languageName: unknown
@@ -16749,6 +16749,13 @@ typescript@^3.8.3:
   languageName: node
   linkType: hard
 
+"workbox-core@npm:7.0.0":
+  version: 7.0.0
+  resolution: "workbox-core@npm:7.0.0"
+  checksum: ca64872f9ce59ee1f3f32a5ecbde36377081a221930c6f925e2c0d7fe39d3fdc309166c430d56d972eba4f7c40d2e7e91a0020699a0745790fbef578ff8f34f6
+  languageName: node
+  linkType: hard
+
 "workbox-expiration@npm:6.5.4, workbox-expiration@npm:^6.5.4":
   version: 6.5.4
   resolution: "workbox-expiration@npm:6.5.4"
@@ -16814,12 +16821,21 @@ typescript@^3.8.3:
   languageName: node
   linkType: hard
 
-"workbox-routing@npm:6.5.4, workbox-routing@npm:^6.5.4":
+"workbox-routing@npm:6.5.4":
   version: 6.5.4
   resolution: "workbox-routing@npm:6.5.4"
   dependencies:
     workbox-core: 6.5.4
   checksum: 7198c50b9016d3cea0e5b51512d66f5813d6e6ad5e99c201435d6c0ab3baee1c90aa2bbdd72dd954f439267b6e6196fb04ec96e62347e6c89385db6c1a4dec79
+  languageName: node
+  linkType: hard
+
+"workbox-routing@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "workbox-routing@npm:7.0.0"
+  dependencies:
+    workbox-core: 7.0.0
+  checksum: 9ea5b00fde5d90819e29ebf6d4aec3b84abec97854eb333c71b83548f1ba12b7f92d764a159f23cfa9e8164940e7b7136536fc0477784560cf2108d8dfe7f83b
   languageName: node
   linkType: hard
 
