@@ -126,7 +126,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "roboto-fontface": "^0.10.0",
     "rrule": "^2.7.1",
-    "sortablejs": "^1.15.0",
+    "sortablejs": "^1.15.3",
     "superstruct": "^1.0.3",
     "tinykeys": "^1.4.0",
     "tsparticles-engine": "^2.8.0",
